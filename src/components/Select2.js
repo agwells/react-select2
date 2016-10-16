@@ -157,10 +157,10 @@ export default class Select2 extends Component {
   }
 
   render() {
-    const { data, value, ...params } = this.props;
+    const { data, value, defaultValue, ...params } = this.props;
     const filteredAttributes = this.filterAttributes(params);
     return (
-      <select ref="select" {...filteredAttributes}>
+      <select ref="select" {...filteredAttributes} defaultValue={defaultValue}>
         {data.map((item, k) => {
           if (this.isObject(item) && this.isObject(item.children)) {
             const { children, text, ...itemParams } = item;
